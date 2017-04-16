@@ -51,12 +51,7 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-
-    public void addRandomCity(View view) {
-        cities.add(getRandomCity());
-        cityAdapter.notifyDataSetChanged();   // this is important to inform the program that data has changed
-    }
-
+    
     private void initialData() {
         cities = new ArrayList<>();
         cities.add(new City("New York", "Established 1624", R.drawable.newyork));
