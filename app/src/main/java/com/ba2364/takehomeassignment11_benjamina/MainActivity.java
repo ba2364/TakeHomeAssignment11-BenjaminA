@@ -6,7 +6,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -40,8 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             case R.id.menu_item_save:
                 cities.add(getRandomCity());
                 cityAdapter.notifyDataSetChanged();   // this is important to inform the program that data has changed
@@ -51,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-    
+
     private void initialData() {
         cities = new ArrayList<>();
         cities.add(new City("New York", "Established 1624", R.drawable.newyork));
