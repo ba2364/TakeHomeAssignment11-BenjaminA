@@ -5,7 +5,6 @@
     <item
         android:id="@+id/menu_item_save"
         android:icon="@android:drawable/ic_input_add"
-        android:onClick="addRandomCity"
         android:title="@string/add"
         app:showAsAction="always"/>
 </menu>

@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId())
         {
             case R.id.menu_item_save:
+                cities.add(getRandomCity());
+                cityAdapter.notifyDataSetChanged();   // this is important to inform the program that data has changed
                 Toast.makeText(this, "City added", Toast.LENGTH_SHORT).show();
                 return true;
             default:
