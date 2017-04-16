@@ -18,7 +18,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginRight="16dp"
-            tools:src="@drawable/mets" />
+            tools:src="@drawable/newyork" />
 
         <TextView
             android:id="@+id/city_name"

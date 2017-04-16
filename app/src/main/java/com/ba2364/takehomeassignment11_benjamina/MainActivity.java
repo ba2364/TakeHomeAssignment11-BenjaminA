@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +32,24 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(cityAdapter);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.menu_item_save:
+                Toast.makeText(this, "City added", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     public void addRandomCity(View view) {
         cities.add(getRandomCity());
         cityAdapter.notifyDataSetChanged();   // this is important to inform the program that data has changed
@@ -36,31 +57,22 @@ public class MainActivity extends AppCompatActivity {
 
     private void initialData() {
         cities = new ArrayList<>();
-        cities.add(new City("New York Giants", "Established 1925", R.drawable.giants));
-        cities.add(new City("New York Mets", "Established 1962", R.drawable.mets));
-        cities.add(new City("New York Rangers", "Established 1926", R.drawable.rangers));
-        cities.add(new City("New York Knicks", "Established 1946", R.drawable.knicks));
+        cities.add(new City("New York", "Established 1624", R.drawable.newyork));
+        cities.add(new City("Los Angeles", "Established 1781", R.drawable.losangeles));
+        cities.add(new City("Boston", "Established 1630", R.drawable.boston));
     }
 
     private City getRandomCity() {
-        int num = (int) (Math.random() * 8);
+        int num = (int) (Math.random() * 4);
         if (num == 0)
-            return new City("New York Giants", "Established 1925 ", R.drawable.giants);
+            return new City("New York", "Established 1624 ", R.drawable.newyork);
         else if (num == 1)
-            return new City("New York Mets", "Established 1962 ", R.drawable.mets);
+            return new City("Los Angeles", "Established 1781 ", R.drawable.losangeles);
         else if (num == 2)
-            return new City("New York Rangers", "Established 1926", R.drawable.rangers);
+            return new City("Boston", "Established 1630", R.drawable.boston);
         else if (num == 3)
-            return new City("New York Knicks", "Established 1946", R.drawable.knicks);
-        else if (num == 4)
-            return new City("New York Yankees", "Established 1903", R.drawable.yankees);
-        else if (num == 5)
-            return new City("New York Islanders", "Established 1972", R.drawable.isles);
-        else if (num == 6)
-            return new City("New Jersey Devils", "Established 1974", R.drawable.devils);
-        else if (num == 7)
-            return new City("Brooklyn Nets", "Established 1967", R.drawable.nets);
+            return new City("Chicago", "Established 1780", R.drawable.chicago);
         else
-            return new City("New York Jets", "Established 1960", R.drawable.jets);
+            return new City("Philadelphia", "Established 1682", R.drawable.phila);
     }
 }

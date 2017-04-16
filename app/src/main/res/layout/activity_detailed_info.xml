@@ -11,7 +11,7 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
-        tools:src="@drawable/mets" />
+        tools:src="@drawable/newyork" />
 
     <TextView
         android:id="@+id/city_name_detail"
