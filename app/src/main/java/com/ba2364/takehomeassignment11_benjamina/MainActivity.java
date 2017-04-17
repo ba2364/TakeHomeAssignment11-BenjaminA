@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private City getRandomCity() {
-        int num = (int) (Math.random() * 4);
+        int num = (int) (Math.random() * 5);
         if (num == 0)
             return new City("New York", "Established 1624 ", R.drawable.newyork);
         else if (num == 1)
